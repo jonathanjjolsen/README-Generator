@@ -2,11 +2,12 @@
 const inquirer = require('inquirer');
 
 // TODO: Create an array of questions for user input
+//title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 const questions = [
     {
         type: 'input',
-        message: 'What is the name of this project?',
-        name: 'project name',
+        message: 'What is the title of this project?',
+        name: 'title',
     },
     {
         type: 'input',
@@ -15,28 +16,37 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What is the color of the sky?',
-        name: 'sky color',
+        message: 'Installation Instructions?',
+        name: 'installation',
     },
     {
         type: 'input',
-        message: 'What is the meaning of life?',
-        name: 'meaning of life',
+        message: 'Usage?',
+        name: 'usage',
+    },
+    {
+        type: 'list',
+        message: 'License?',
+        name: 'license',
+        choices:['MIT', 'GNUPLv3', 'ISC'],
+        filter(value) {
+            return value;
+        }
     },
     {
         type: 'input',
-        message: 'How old are you?',
-        name: 'age',
+        message: 'Contributing?',
+        name: 'contributers',
     },
     {
         type: 'input',
-        message: 'What are your plans for today?',
-        name: 'plans',
+        message: 'Tests?',
+        name: 'tests',
     },
     {
         type: 'input',
-        message: 'How many colors are in the rainbow?',
-        name: 'colors',
+        message: 'Questions?',
+        name: 'questions',
     },
 ]
 
