@@ -51,7 +51,8 @@ const questions = [
     },
 ]
 
-function generator() {
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {
     return inquirer.prompt(questions)
     .then((data)=>{
         const markdown = generateMarkdown(data);
@@ -62,11 +63,7 @@ function generator() {
         console.log(error)
     })
 }
-generator();
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
+writeToFile();
 // TODO: Create a function to initialize app
 function init() {}
 
