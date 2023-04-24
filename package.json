@@ -4,9 +4,9 @@
   "description": "This application is designed to create a professional level README file using command line prompts.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "author": "",
+  "author": "Jonathan Olsen",
   "license": "ISC",
   "dependencies": {
     "inquirer": "^8.2.4"
