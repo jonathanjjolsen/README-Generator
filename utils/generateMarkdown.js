@@ -15,8 +15,11 @@ function renderLicenseLink(license) {
     case "MIT":
       licenselink = "https://mit-license.org/";
       break;
-    case "GNUPLv3":
-      licenselink = "https://www.gnu.org/licenses/";
+    case "Apache2.0":
+      licenselink = "https://www.apache.org/licenses/LICENSE-2.0";
+      break;
+    case "IBM":
+      licenselink = "https://www.ibm.com/about/software-licensing/licensing/basics";
       break;
     case "ISC":
       licenselink = "https://opensource.org/license/isc-license-txt/";
@@ -31,13 +34,17 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  let completeLicense = "";
+  if(license != 'None') {
+  return `## [License](#table-of-contents)
 
-  if (license != "None") {
-    completeLicense += badge;
-    completeLicense += licenselink;
+  This application is covered by the following licesne:
+
+  ${renderLicenseLink(license)}
+  `
   }
-  return completeLicense;
+  else{
+    return;
+  }
 }
 
 // TODO: Create a function to generate markdown for README
@@ -47,34 +54,35 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(data.license)}
 
   ## Table of Contents
-  -[Project Description] \n
-  -[Installation] \n
-  -[Usage] \n
-  -[License] \n
-  -[Contributions] \n
-  -[Tests] \n
-  -[Questions] \n
+  [Project Description](#description) \n
+  [Installation](#installation) \n
+  [Usage](#usage) \n
+  [License](#license) \n
+  [Contributions](#contributions) \n
+  [Tests](#tests) \n
+  [Questions](#questions) \n
 
-  ## Description
+  ## [Description](#table-of-contents)
   ${data.description}
 
-  ## Installation
+  ## [Installation](#table-of-contents)
   ${data.installation}
 
-  ## Usage
+  ## [Usage](#table-of-contents)
   ${data.usage}
 
-  ## License
-  For more information use this link ${renderLicenseLink(data.license)}
+  ${renderLicenseSection(data.license)}
 
-  ## Contributions
+  ## [Contributions](#table-of-contents)
   ${data.contributers}
 
-  ## Tests
+  ## [Tests](#table-of-contents)
   ${data.tests}
 
-  ## Questions
-  ${data.questions}
+  ## [Questions](#table-of-contents)
+  For any questions, submit to the following resources. \n
+  Email: ${data.email} \n
+  Github: ${data.github}
 
 `;
 }

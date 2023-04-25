@@ -30,7 +30,7 @@ const questions = [
         type: 'list',
         message: 'License?',
         name: 'license',
-        choices:['MIT', 'Apache2.0', 'IBM', 'ISC'],
+        choices:['MIT', 'Apache2.0', 'IBM', 'ISC', 'None'],
         filter(value) {
             return value;
         }
@@ -47,9 +47,15 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Questions?',
-        name: 'questions',
+        message: 'Enter email for questions?',
+        name: 'email',
     },
+    {
+        type: 'input',
+        message: 'Enter github link?',
+        name: 'github',
+    },
+
 ]
 
 // TODO: Create a function to write README file
