@@ -8,3 +8,5 @@ User must have the inquirer package installed. In order to do so, navigate to th
 
 ## Usage
 In order to use this program, the user must first complete the installation guide above. Once this is done, re-navigate to the command line and enter "npm start." This will initiate the program and prompt the user with questions regarding the creation of a README file. After completing the questions, the user will be able to use a new file that has been created detailing all of the information they just gave in the form of a README file.
+
+## GitHub Repo https://github.com/jonathanjjolsen/README-Generator
