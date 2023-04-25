@@ -30,7 +30,7 @@ const questions = [
         type: 'list',
         message: 'License?',
         name: 'license',
-        choices:['MIT', 'GNUPLv3', 'ISC'],
+        choices:['MIT', 'Apache2.0', 'IBM', 'ISC'],
         filter(value) {
             return value;
         }
